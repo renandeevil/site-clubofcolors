@@ -1,3 +1,15 @@
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -32,16 +44,16 @@ body, html {
   justify-content: center;
   height: 100vh;
   text-align: center;
-  margin-top: -50px; /* Move tudo para cima */
+  margin-top: -50px;
 }
 
 .header-img {
   width: 100%;
-  max-width: 500px; /* Banner menor que antes */
+  max-width: 500px;
   height: auto;
   object-fit: contain;
   display: block;
-  margin-bottom: 1px; /* Ajuste para reduzir o espaço entre o banner e os botões */
+  margin-bottom: 1px;
   z-index: 4;
 }
 
@@ -49,31 +61,31 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Aumentando o espaço entre os botões */
+  gap: 20px;
   z-index: 4;
 }
 
 .btn {
-  padding: 20px 40px; /* Botões maiores */
-  font-size: 20px; /* Texto maior nos botões */
+  padding: 20px 40px;
+  font-size: 20px;
   font-weight: bold;
-  border-radius: 25px; /* Botões mais arredondados */
+  border-radius: 25px;
   border: none;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
   text-decoration: none;
+  color: white;
+  box-shadow: 0 4px 30px rgb(46, 34, 139); /* sombra mais escura e suave */
 }
 
 .premium {
   background: linear-gradient(90deg, rgb(255, 75, 75), rgb(255, 187, 61), rgb(255, 248, 112), lightgreen, rgb(102, 163, 255), rgb(188, 121, 255), rgb(244, 122, 255));
   background-size: 200% 200%;
   animation: gradientShift 15s ease infinite;
-  color: white;
 }
 
 .entrar {
   background-color: #5865F2;
-  color: white;
 }
 
 .footer-img {
@@ -86,14 +98,16 @@ body, html {
   z-index: 0;
 }
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Hover effects */
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 30px rgb(51, 37, 141);
+}
+
+.premium:hover {
+  filter: brightness(1.05);
+}
+
+.entrar:hover {
+  background-color: #4752c4;
 }
