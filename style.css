@@ -111,3 +111,59 @@ body, html {
 .entrar:hover {
   background-color: #4752c4;
 }
+
+.staff-floating-icons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Pra não atrapalhar cliques */
+  z-index: 2; /* Fica acima do blur mas abaixo dos botões */
+}
+
+.staff-icon {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  animation: floatXY 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatXY {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(10px, -15px);
+  }
+  50% {
+    transform: translate(-10px, -10px);
+  }
+  75% {
+    transform: translate(15px, 10px);
+  }
+  100% {
+    transform: translate(0px, 15px);
+  }
+}
+
+
+/* ESTOURAR BOLHA */
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.estourado {
+  animation: explode 0.5s forwards;
+  pointer-events: none; /* Impede novos cliques enquanto anima */
+}
