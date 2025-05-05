@@ -42,6 +42,7 @@
     <div class="buttons">
       <a href="https://livepix.gg/clubofcolors/assinatura" class="btn premium" target="_blank">Premium</a>
       <a href="https://discord.gg/clubofcolors" class="btn entrar" target="_blank">Entrar</a>
+      <a href="https://renandevil.clubofcolors.com" class="btn portfolio" target="_blank">Portfólio</a>
     </div>
   </div>
 
@@ -66,34 +67,6 @@
     <img src="staff14.png" class="staff-icon" style="top: 18%; left: 30%; animation-delay: 3.8s;">
     <img src="staff15.png" class="staff-icon" style="top: 45%; left: 90%; animation-delay: 5s;">   
   </div>
-
-  <!-- Áudio para efeito de bolha -->
-  <audio id="pop-sound" src="bolha.mp3" preload="auto"></audio>
-
-  <!-- Script para animação + som -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const avatares = document.querySelectorAll('.staff-icon');
-      const popSound = document.getElementById('pop-sound');
-
-      avatares.forEach((avatar) => {
-        avatar.addEventListener('click', () => {
-          avatar.classList.add('estourado');
-          popSound.currentTime = 0;  // Reinicia o áudio a cada clique
-          popSound.play();  // Toca o som de bolha
-
-          // Adiciona uma animação de estourar (se ainda não tiver)
-          avatar.style.transition = "transform 0.3s, opacity 0.3s";
-          avatar.style.transform = "scale(0.5)";
-          avatar.style.opacity = "0";
-
-          setTimeout(() => {
-            avatar.remove();
-          }, 500); // Tempo para o efeito de animação
-        });
-      });
-    });
-  </script>
 
 </body>
 </html>
